@@ -203,6 +203,17 @@ class CMSISDeviceEFM32GG12BDependency(Dependency):
         ]
 
 
+class CMSISDeviceSAMS70Dependency(Dependency):
+    NAME = 'cmsis-dfp-sams70'
+
+    def __init__(self) -> None:
+        super().__init__()
+        self._dependencies = ['cmsis-5']
+        self._external_include = [
+            os.path.join('sams70b', 'include'),
+        ]
+
+
 class SensorBlobDependency(Dependency):
     NAME = 'sensor-blobs'
 
