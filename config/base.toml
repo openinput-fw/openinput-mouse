@@ -1,4 +1,5 @@
 source = [
 	'protocol/protocol.c',
 	'driver/pixart/pixart_pmw.c',
+	'key_actions/key_actions.c',
 ]
