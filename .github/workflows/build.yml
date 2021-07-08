@@ -27,9 +27,10 @@ jobs:
           - 'stm32f1-generic -c rival310'
           - 'stm32f1-generic -c bluepill'
           - 'efm32gg12b-generic -c sltb009a'
+          - 'atmega32u4-generic -c octopus'
     steps:
     - name: Update the system and install dependencies
-      run: pacman -Syu --noconfirm --noprogressbar --needed python-pip ninja gcc arm-none-eabi-gcc arm-none-eabi-binutils arm-none-eabi-newlib pkgconf readline git
+      run: pacman -Syu --noconfirm --noprogressbar --needed python-pip ninja gcc arm-none-eabi-gcc arm-none-eabi-binutils arm-none-eabi-newlib avr-gcc avr-binutils avr-libc pkgconf readline git
 
     - name: Install ninja_syntax
       run: pip install ninja_syntax

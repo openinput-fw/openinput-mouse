@@ -169,6 +169,30 @@ class TinyUSBDependency(Dependency):
         ]
 
 
+class LufaDependency(Dependency):
+    NAME = 'lufa'
+
+    def __init__(self) -> None:
+        super().__init__()
+
+        src_path = self.base_path / 'LUFA/Drivers/USB'
+
+        self._source = []
+        for path in src_path.rglob('*.c'):
+            self._source.append(
+                path.relative_to(self.base_path),
+            )
+
+        self._include = [
+            'LUFA/Common'
+            'LUFA/Driver/USB'
+        ]
+        self._external_include = [
+            'LUFA/Common'
+            'LUFA/Driver/USB'
+        ]
+
+
 class CMSIS5Dependency(Dependency):
     NAME = 'cmsis-5'
 
